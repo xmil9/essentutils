@@ -1,2 +1,2 @@
 # essentutils
-Essential utility library.
+Essential C++ utilities.
