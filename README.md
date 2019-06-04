@@ -1,0 +1,2 @@
+# essentutils
+Essential utility library.
