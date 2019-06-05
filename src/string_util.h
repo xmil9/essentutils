@@ -27,10 +27,10 @@ std::vector<std::string> split(const std::string& s, const std::string& separato
 template <typename Iter>
 std::string join(Iter it, Iter end, const std::string& glue = "");
 
-template <typename Int> Int intFromStr_throw(const std::string& s);
+template <typename Int> Int intFromStrThrow(const std::string& s);
 template <typename Int> Int intFromStr(const std::string& s, Int defaultValue) noexcept;
 template <typename Int> std::optional<Int> intFromStr(const std::string& s) noexcept;
-template <typename FP> FP fpFromStr_throw(const std::string& s);
+template <typename FP> FP fpFromStrThrow(const std::string& s);
 template <typename FP> FP fpFromStr(const std::string& s, FP defaultValue) noexcept;
 template <typename FP> std::optional<FP> fpFromStr(const std::string& s) noexcept;
 
@@ -59,7 +59,7 @@ template <typename Iter> std::string join(Iter it, Iter end, const std::string& 
 }
 
 
-template <typename Int> Int intFromStr_throw(const std::string& s)
+template <typename Int> Int intFromStrThrow(const std::string& s)
 {
    if constexpr (std::is_same_v<Int, long>)
       return std::stol(s.c_str());
@@ -78,7 +78,7 @@ template <typename Int> Int intFromStr(const std::string& s, Int defaultValue) n
 {
    try
    {
-      return intFromStr_throw<Int>(s);
+      return intFromStrThrow<Int>(s);
    }
    catch (...)
    {
@@ -91,7 +91,7 @@ template <typename Int> std::optional<Int> intFromStr(const std::string& s) noex
 {
    try
    {
-      return intFromStr_throw<Int>(s);
+      return intFromStrThrow<Int>(s);
    }
    catch (...)
    {
@@ -100,7 +100,7 @@ template <typename Int> std::optional<Int> intFromStr(const std::string& s) noex
 }
 
 
-template <typename FP> FP fpFromStr_throw(const std::string& s)
+template <typename FP> FP fpFromStrThrow(const std::string& s)
 {
    if constexpr (std::is_same_v<FP, double>)
       return std::stod(s.c_str());
@@ -115,7 +115,7 @@ template <typename FP> FP fpFromStr(const std::string& s, FP defaultValue) noexc
 {
    try
    {
-      return fpFromStr_throw<FP>(s);
+      return fpFromStrThrow<FP>(s);
    }
    catch (...)
    {
@@ -128,7 +128,7 @@ template <typename FP> std::optional<FP> fpFromStr(const std::string& s) noexcep
 {
    try
    {
-      return fpFromStr_throw<FP>(s);
+      return fpFromStrThrow<FP>(s);
    }
    catch (...)
    {

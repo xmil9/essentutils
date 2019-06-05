@@ -10,14 +10,14 @@
 #include <string>
 
 
-static std::string errorMessage(const std::string& label, const std::string& condStr,
+static std::string errorMessage(const std::string& label, const std::string& reason,
                                 const std::string& fileName, int lineNum)
 {
    std::string msg;
    msg += "Failed - ";
    msg += label;
    msg += ": '";
-   msg += condStr;
+   msg += reason;
    msg += "'.";
    msg += " (file: ";
    msg += fileName;
@@ -28,10 +28,10 @@ static std::string errorMessage(const std::string& label, const std::string& con
 }
 
 
-bool verify(bool cond, const std::string& label, const std::string& condStr,
+bool verify(bool cond, const std::string& label, const std::string& reason,
             const std::string& fileName, int lineNum)
 {
    if (!cond)
-      std::cout << errorMessage(label, condStr, fileName, lineNum) << "\n";
+      std::cout << errorMessage(label, reason, fileName, lineNum) << "\n";
    return cond;
 }
