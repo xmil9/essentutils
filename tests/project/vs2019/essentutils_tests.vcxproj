@@ -24,11 +24,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\color_tests.cpp" />
     <ClCompile Include="..\..\src\essentutils_tests.cpp" />
     <ClCompile Include="..\..\src\string_util_tests.cpp" />
     <ClCompile Include="..\..\src\test_util.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\color_tests.h" />
     <ClInclude Include="..\..\src\string_util_tests.h" />
     <ClInclude Include="..\..\src\test_util.h" />
   </ItemGroup>
