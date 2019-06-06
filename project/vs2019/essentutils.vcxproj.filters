@@ -6,5 +6,6 @@
   <ItemGroup>
     <ClInclude Include="..\..\src\string_util.h" />
     <ClInclude Include="..\..\src\color.h" />
+    <ClInclude Include="..\..\src\sutils_api.h" />
   </ItemGroup>
 </Project>
