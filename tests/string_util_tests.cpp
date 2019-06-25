@@ -2361,6 +2361,37 @@ void testUtf16WithWString()
    }
 }
 
+
+void testConvertToForString()
+{
+   {
+      const string caseLabel = "convertTo std::string from std::wstring";
+      VERIFY(convertTo<string>(L"abc123!@#\n\t\x20AC") == "abc123!@#\n\t\xE2\x82\xAC",
+             caseLabel);
+   }
+   {
+      const string caseLabel = "convertTo std::string from std::string";
+      VERIFY(convertTo<wstring>(L"abc123!@#\n\t\xE2\x82\xAC") ==
+                L"abc123!@#\n\t\xE2\x82\xAC",
+             caseLabel);
+   }
+}
+
+
+void testConvertToForWString()
+{
+   {
+      const string caseLabel = "convertTo std::wstring from std::string";
+      VERIFY(convertTo<wstring>("abc123!@#\n\t\xE2\x82\xAC") == L"abc123!@#\n\t\x20AC",
+             caseLabel);
+   }
+   {
+      const string caseLabel = "convertTo std::wstring from std::wstring";
+      VERIFY(convertTo<wstring>(L"abc123!@#\n\t\x20AC") == L"abc123!@#\n\t\x20AC",
+             caseLabel);
+   }
+}
+
 } // namespace
 
 
@@ -2402,4 +2433,6 @@ void testStringUtil()
    testUtf8WithWString();
    testUtf16WithString();
    testUtf16WithWString();
+   testConvertToForString();
+   testConvertToForWString();
 }
