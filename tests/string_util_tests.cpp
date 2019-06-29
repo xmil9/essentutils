@@ -2272,6 +2272,10 @@ void testUtf8WithString()
       const string caseLabel = "utf8 for std::string with unicode characters";
       VERIFY(utf8("\xf0\x90\x90\x80") == "\xf0\x90\x90\x80", caseLabel);
    }
+   {
+      const string caseLabel = "utf8 for empty std::string";
+      VERIFY(utf8("") == "", caseLabel);
+   }
 }
 
 
@@ -2300,6 +2304,10 @@ void testUtf8WithWString()
       const string caseLabel = "utf8 for std::wstring with unicode characters";
       VERIFY(utf8(L"\x20AC") == "\xE2\x82\xAC", caseLabel);
       VERIFY(utf8(L"\xD801\xDC00") == "\xf0\x90\x90\x80", caseLabel);
+   }
+   {
+      const string caseLabel = "utf8 for empty std::wstring";
+      VERIFY(utf8(L"") == "", caseLabel);
    }
 }
 
@@ -2330,6 +2338,10 @@ void testUtf16WithString()
       VERIFY(utf16("\xE2\x82\xAC") == L"\x20AC", caseLabel);
       VERIFY(utf16("\xf0\x90\x90\x80") == L"\xD801\xDC00", caseLabel);
    }
+   {
+      const string caseLabel = "utf16 for empty std::string";
+      VERIFY(utf16("") == L"", caseLabel);
+   }
 }
 
 
@@ -2359,6 +2371,10 @@ void testUtf16WithWString()
       VERIFY(utf16(L"\x20AC") == L"\x20AC", caseLabel);
       VERIFY(utf16(L"\xD801\xDC00") == L"\xD801\xDC00", caseLabel);
    }
+   {
+      const string caseLabel = "utf16 for empty std::wstring";
+      VERIFY(utf16(L"") == L"", caseLabel);
+   }
 }
 
 
@@ -2371,9 +2387,17 @@ void testConvertToForString()
    }
    {
       const string caseLabel = "convertTo std::string from std::string";
-      VERIFY(convertTo<wstring>(L"abc123!@#\n\t\xE2\x82\xAC") ==
-                L"abc123!@#\n\t\xE2\x82\xAC",
+      VERIFY(convertTo<string>("abc123!@#\n\t\xE2\x82\xAC") ==
+                "abc123!@#\n\t\xE2\x82\xAC",
              caseLabel);
+   }
+   {
+      const string caseLabel = "convertTo std::string from empty std::wstring";
+      VERIFY(convertTo<string>(L"") == "", caseLabel);
+   }
+   {
+      const string caseLabel = "convertTo std::string from empty std::string";
+      VERIFY(convertTo<string>("") == "", caseLabel);
    }
 }
 
@@ -2389,6 +2413,14 @@ void testConvertToForWString()
       const string caseLabel = "convertTo std::wstring from std::wstring";
       VERIFY(convertTo<wstring>(L"abc123!@#\n\t\x20AC") == L"abc123!@#\n\t\x20AC",
              caseLabel);
+   }
+   {
+      const string caseLabel = "convertTo std::wstring from empty std::wstring";
+      VERIFY(convertTo<wstring>(L"") == L"", caseLabel);
+   }
+   {
+      const string caseLabel = "convertTo std::wstring from empty std::string";
+      VERIFY(convertTo<wstring>("") == L"", caseLabel);
    }
 }
 
