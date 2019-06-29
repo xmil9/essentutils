@@ -22,3 +22,4 @@ set to=%dest%\project\vs2019
 mkdir %to%
 robocopy %from% %to% essentutils.vcxproj
 robocopy %from% %to% essentutils.vcxproj.filters
+robocopy %from% %to% deploy_as_sources.bat
