@@ -35,11 +35,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\project\vs2019\essentutils.vcxproj">
-      <Project>{1c70ff5c-cdc9-426e-9c6a-922919183bab}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="..\..\color_tests.cpp" />
     <ClCompile Include="..\..\essentutils_tests.cpp" />
     <ClCompile Include="..\..\string_util_tests.cpp" />
@@ -49,6 +44,11 @@
     <ClInclude Include="..\..\color_tests.h" />
     <ClInclude Include="..\..\string_util_tests.h" />
     <ClInclude Include="..\..\test_util.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\project\vs\essentutils.vcxproj">
+      <Project>{1c70ff5c-cdc9-426e-9c6a-922919183bab}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

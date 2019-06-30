@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "essentutils", "essentutils.vcxproj", "{1C70FF5C-CDC9-426E-9C6A-922919183BAB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "essentutils_tests", "..\..\tests\project\vs2019\essentutils_tests.vcxproj", "{89AE20FC-29EE-473D-A8B6-144CC7A4EFCC}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "essentutils_tests", "..\..\tests\project\vs\essentutils_tests.vcxproj", "{89AE20FC-29EE-473D-A8B6-144CC7A4EFCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
