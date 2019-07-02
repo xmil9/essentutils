@@ -2424,6 +2424,66 @@ void testConvertToForWString()
    }
 }
 
+
+void testUtf8WithChar()
+{
+   {
+      const string caseLabel = "utf8 for narrow character";
+      VERIFY(utf8('a') == "a", caseLabel);
+      VERIFY(utf8('1') == "1", caseLabel);
+      VERIFY(utf8('$') == "$", caseLabel);
+      VERIFY(utf8('\n') == "\n", caseLabel);
+      VERIFY(utf8('\x90') == "\x90", caseLabel);
+   }
+}
+
+
+void testUtf8WithWChar()
+{
+   {
+      const string caseLabel = "utf8 for wide character";
+      VERIFY(utf8(L'a') == "a", caseLabel);
+      VERIFY(utf8(L'1') == "1", caseLabel);
+      VERIFY(utf8(L'$') == "$", caseLabel);
+      VERIFY(utf8(L'\n') == "\n", caseLabel);
+      VERIFY(utf8(L'\x20AC') == "\xE2\x82\xAC", caseLabel);
+   }
+}
+
+
+void testUtf16WithChar()
+{
+   {
+      const string caseLabel = "utf16 for narrow character";
+      VERIFY(utf16("a", 1) == L'a', caseLabel);
+      VERIFY(utf16("1", 1) == L'1', caseLabel);
+      VERIFY(utf16("$", 1) == L'$', caseLabel);
+      VERIFY(utf16("\n", 1) == L'\n', caseLabel);
+      VERIFY(utf16("\xE2\x82\xAC", 3) == L'\x20AC', caseLabel);
+   }
+   {
+      const string caseLabel = "utf16 for narrow character and zero length";
+      VERIFY(utf16("", 0) == L'\0', caseLabel);
+   }
+}
+
+
+void testUtf16WithWChar()
+{
+   {
+      const string caseLabel = "utf16 for wide character";
+      VERIFY(utf16(L"a", 1) == L'a', caseLabel);
+      VERIFY(utf16(L"1", 1) == L'1', caseLabel);
+      VERIFY(utf16(L"$", 1) == L'$', caseLabel);
+      VERIFY(utf16(L"\n", 1) == L'\n', caseLabel);
+      VERIFY(utf16(L"\x20AC", 1) == L'\x20AC', caseLabel);
+   }
+   {
+      const string caseLabel = "utf16 for wide character and zero length";
+      VERIFY(utf16(L"", 0) == L'\0', caseLabel);
+   }
+}
+
 } // namespace
 
 
@@ -2467,4 +2527,8 @@ void testStringUtil()
    testUtf16WithWString();
    testConvertToForString();
    testConvertToForWString();
+   testUtf8WithChar();
+   testUtf8WithWChar();
+   testUtf16WithChar();
+   testUtf16WithWChar();
 }
