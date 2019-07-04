@@ -37,11 +37,13 @@
   <ItemGroup>
     <ClCompile Include="..\..\color_tests.cpp" />
     <ClCompile Include="..\..\essentutils_tests.cpp" />
+    <ClCompile Include="..\..\filesys_tests_win32.cpp" />
     <ClCompile Include="..\..\string_util_tests.cpp" />
     <ClCompile Include="..\..\test_util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\color_tests.h" />
+    <ClInclude Include="..\..\filesys_tests.h" />
     <ClInclude Include="..\..\string_util_tests.h" />
     <ClInclude Include="..\..\test_util.h" />
   </ItemGroup>
