@@ -39,6 +39,71 @@ void testRgbComponentCtor()
    }
 }
 
+
+void testRgbSwap()
+{
+  {
+      const string caseLabel = "Rgb swap";
+      Rgb a{1, 2, 3};
+      Rgb b{10, 20, 30};
+      
+      swap(a, b);
+      
+      VERIFY(a == Rgb(10, 20, 30), caseLabel);
+      VERIFY(b == Rgb(1, 2, 3), caseLabel);
+   }
+}
+
+
+void testRgbEquality()
+{
+   {
+      const string caseLabel = "Rgb equality for equal colors";
+      Rgb a{10, 20, 30};
+      Rgb b{10, 20, 30};
+      VERIFY(a == b, caseLabel);
+   }
+   {
+      const string caseLabel = "Rgb equality for inequal colors";
+      Rgb a{10, 20, 30};
+      Rgb b{11, 20, 30};
+      VERIFY(!(a == b), caseLabel);
+      
+      Rgb c{10, 20, 30};
+      Rgb d{10, 22, 30};
+      VERIFY(!(a == b), caseLabel);
+      
+      Rgb e{10, 20, 30};
+      Rgb f{10, 20, 33};
+      VERIFY(!(a == b), caseLabel);
+   }
+}
+
+
+void testRgbInequality()
+{
+   {
+      const string caseLabel = "Rgb inequality for inequal colors";
+      Rgb a{10, 20, 30};
+      Rgb b{11, 20, 30};
+      VERIFY(a != b, caseLabel);
+      
+      Rgb c{10, 20, 30};
+      Rgb d{10, 22, 30};
+      VERIFY(a != b, caseLabel);
+      
+      Rgb e{10, 20, 30};
+      Rgb f{10, 20, 33};
+      VERIFY(a != b, caseLabel);
+   }
+   {
+      const string caseLabel = "Rgb inequality for equal colors";
+      Rgb a{10, 20, 30};
+      Rgb b{10, 20, 30};
+      VERIFY(!(a != b), caseLabel);
+   }
+}
+
 } // namespace
 
 
@@ -48,4 +113,7 @@ void testColor()
 {
    testRgbDefaultCtor();
    testRgbComponentCtor();
+   testRgbSwap();
+   testRgbEquality();
+   testRgbInequality();
 }
