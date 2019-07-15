@@ -9,9 +9,6 @@
 #include "color.h"
 #include "test_util.h"
 
-using namespace std;
-using namespace sutil;
-
 
 namespace
 {
@@ -20,8 +17,8 @@ namespace
 void testRgbDefaultCtor()
 {
    {
-      const string caseLabel = "Rgb default ctor";
-      Rgb rgb;
+      const std::string caseLabel = "Rgb default ctor";
+      sutil::Rgb rgb;
       VERIFY(rgb.r == 0, caseLabel);
       VERIFY(rgb.g == 0, caseLabel);
       VERIFY(rgb.b == 0, caseLabel);
@@ -31,8 +28,8 @@ void testRgbDefaultCtor()
 void testRgbComponentCtor()
 {
    {
-      const string caseLabel = "Rgb component ctor";
-      Rgb rgb{1, 2, 3};
+      const std::string caseLabel = "Rgb component ctor";
+      sutil::Rgb rgb{1, 2, 3};
       VERIFY(rgb.r == 1, caseLabel);
       VERIFY(rgb.g == 2, caseLabel);
       VERIFY(rgb.b == 3, caseLabel);
@@ -42,15 +39,15 @@ void testRgbComponentCtor()
 
 void testRgbSwap()
 {
-  {
-      const string caseLabel = "Rgb swap";
-      Rgb a{1, 2, 3};
-      Rgb b{10, 20, 30};
-      
+   {
+      const std::string caseLabel = "Rgb swap";
+      sutil::Rgb a{1, 2, 3};
+      sutil::Rgb b{10, 20, 30};
+
       swap(a, b);
-      
-      VERIFY(a == Rgb(10, 20, 30), caseLabel);
-      VERIFY(b == Rgb(1, 2, 3), caseLabel);
+
+      VERIFY(a == sutil::Rgb(10, 20, 30), caseLabel);
+      VERIFY(b == sutil::Rgb(1, 2, 3), caseLabel);
    }
 }
 
@@ -58,23 +55,23 @@ void testRgbSwap()
 void testRgbEquality()
 {
    {
-      const string caseLabel = "Rgb equality for equal colors";
-      Rgb a{10, 20, 30};
-      Rgb b{10, 20, 30};
+      const std::string caseLabel = "Rgb equality for equal colors";
+      sutil::Rgb a{10, 20, 30};
+      sutil::Rgb b{10, 20, 30};
       VERIFY(a == b, caseLabel);
    }
    {
-      const string caseLabel = "Rgb equality for inequal colors";
-      Rgb a{10, 20, 30};
-      Rgb b{11, 20, 30};
+      const std::string caseLabel = "Rgb equality for inequal colors";
+      sutil::Rgb a{10, 20, 30};
+      sutil::Rgb b{11, 20, 30};
       VERIFY(!(a == b), caseLabel);
-      
-      Rgb c{10, 20, 30};
-      Rgb d{10, 22, 30};
+
+      sutil::Rgb c{10, 20, 30};
+      sutil::Rgb d{10, 22, 30};
       VERIFY(!(a == b), caseLabel);
-      
-      Rgb e{10, 20, 30};
-      Rgb f{10, 20, 33};
+
+      sutil::Rgb e{10, 20, 30};
+      sutil::Rgb f{10, 20, 33};
       VERIFY(!(a == b), caseLabel);
    }
 }
@@ -83,23 +80,23 @@ void testRgbEquality()
 void testRgbInequality()
 {
    {
-      const string caseLabel = "Rgb inequality for inequal colors";
-      Rgb a{10, 20, 30};
-      Rgb b{11, 20, 30};
+      const std::string caseLabel = "Rgb inequality for inequal colors";
+      sutil::Rgb a{10, 20, 30};
+      sutil::Rgb b{11, 20, 30};
       VERIFY(a != b, caseLabel);
-      
-      Rgb c{10, 20, 30};
-      Rgb d{10, 22, 30};
+
+      sutil::Rgb c{10, 20, 30};
+      sutil::Rgb d{10, 22, 30};
       VERIFY(a != b, caseLabel);
-      
-      Rgb e{10, 20, 30};
-      Rgb f{10, 20, 33};
+
+      sutil::Rgb e{10, 20, 30};
+      sutil::Rgb f{10, 20, 33};
       VERIFY(a != b, caseLabel);
    }
    {
-      const string caseLabel = "Rgb inequality for equal colors";
-      Rgb a{10, 20, 30};
-      Rgb b{10, 20, 30};
+      const std::string caseLabel = "Rgb inequality for equal colors";
+      sutil::Rgb a{10, 20, 30};
+      sutil::Rgb b{10, 20, 30};
       VERIFY(!(a != b), caseLabel);
    }
 }

@@ -11,9 +11,6 @@
 #include "test_util.h"
 #include <string>
 
-using namespace std;
-using namespace sutil;
-
 
 namespace
 {
@@ -22,8 +19,8 @@ namespace
 void testAppDirectory()
 {
    {
-      const string caseLabel = "appDirectory";
-      const filesystem::path dir = appDirectory();
+      const std::string caseLabel = "appDirectory";
+      const std::filesystem::path dir = sutil::appDirectory();
       VERIFY(!dir.empty(), caseLabel);
    }
 }
@@ -32,8 +29,8 @@ void testAppDirectory()
 void testUserDirectory()
 {
    {
-      const string caseLabel = "userDirectory";
-      const filesystem::path dir = userDirectory();
+      const std::string caseLabel = "userDirectory";
+      const std::filesystem::path dir = sutil::userDirectory();
       VERIFY(!dir.empty(), caseLabel);
    }
 }
