@@ -6,6 +6,7 @@
     <ClInclude Include="..\..\string_util.h" />
     <ClInclude Include="..\..\sutils_api.h" />
     <ClInclude Include="..\..\filesys.h" />
+    <ClInclude Include="..\..\fputil.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\string_util.cpp" />

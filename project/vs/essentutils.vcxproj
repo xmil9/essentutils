@@ -37,6 +37,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\color.h" />
     <ClInclude Include="..\..\filesys.h" />
+    <ClInclude Include="..\..\fputil.h" />
     <ClInclude Include="..\..\generic_string_util.h" />
     <ClInclude Include="..\..\string_util.h" />
     <ClInclude Include="..\..\sutils_api.h" />

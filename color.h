@@ -56,4 +56,4 @@ inline bool operator!=(const Rgb& a, const Rgb& b)
    return !(a == b);
 }
 
-} // namespace util
+} // namespace sutil
