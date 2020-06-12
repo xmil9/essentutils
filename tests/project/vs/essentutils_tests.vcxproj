@@ -39,6 +39,7 @@
     <ClCompile Include="..\..\essentutils_tests.cpp" />
     <ClCompile Include="..\..\filesys_tests_win32.cpp" />
     <ClCompile Include="..\..\fputil_tests.cpp" />
+    <ClCompile Include="..\..\math_util_tests.cpp" />
     <ClCompile Include="..\..\string_util_tests.cpp" />
     <ClCompile Include="..\..\test_util.cpp" />
   </ItemGroup>
@@ -46,6 +47,7 @@
     <ClInclude Include="..\..\color_tests.h" />
     <ClInclude Include="..\..\filesys_tests.h" />
     <ClInclude Include="..\..\fputil_tests.h" />
+    <ClInclude Include="..\..\math_util_tests.h" />
     <ClInclude Include="..\..\string_util_tests.h" />
     <ClInclude Include="..\..\test_util.h" />
   </ItemGroup>
