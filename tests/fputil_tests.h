@@ -1,6 +1,6 @@
 //
 // essentutils tests
-// Tests for string utilities.
+// Tests for floating point utilities.
 //
 // Jun-2020, Michael Lindner
 // MIT license
