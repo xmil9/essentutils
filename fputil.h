@@ -35,6 +35,13 @@ template <> struct FpTraits<float>
 };
 
 
+template <> struct FpTraits<long double>
+{
+   // Threshold below which two fp values are considered equal.
+   static constexpr long double epsilon = 0.0000001L;
+};
+
+
 ///////////////////
 
 template <typename FP> bool fpEqual(FP a, FP b, FP eps)
