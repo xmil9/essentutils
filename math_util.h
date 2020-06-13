@@ -7,6 +7,7 @@
 //
 #pragma once
 #include <cassert>
+#include <type_traits>
 #include <utility>
 
 
@@ -67,6 +68,29 @@ T shiftIntoRange(T val, T min, T max)
 
    assert(min <= val && val <= max);
 	return val;
+}
+
+
+////////////////////
+// Angle unit conversions.
+
+template <typename FP>
+constexpr FP Pi = FP{3.1415926535};
+
+
+template <typename FP>
+constexpr FP degreesFromRadians(FP rad)
+{
+   static_assert(std::is_floating_point_v<FP>);
+   return rad * FP{180.0} / Pi<FP>;
+}
+
+
+template <typename FP>
+constexpr FP radiansFromDegrees(FP deg)
+{
+   static_assert(std::is_floating_point_v<FP>);
+	return deg * Pi<FP> / FP{180.0};
 }
 
 } // namespace sutil
