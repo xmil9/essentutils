@@ -129,9 +129,21 @@ void testRadiansFromDegrees()
    VERIFY(fpEqual(radiansFromDegrees(90.0), 0.5 * Pi<double>, 0.000001), caseLabel);
    VERIFY(fpEqual(radiansFromDegrees(180.0), Pi<double>, 0.000001), caseLabel);
    VERIFY(fpEqual(radiansFromDegrees(270.0f), 1.5f * Pi<float>, 0.000001f), caseLabel);
-   VERIFY(fpEqual(radiansFromDegrees(360.0f), 0.5f * Pi<float>, 0.000001f), caseLabel);
-   VERIFY(fpEqual(radiansFromDegrees(57.295779513), 0.5 * Pi<double>, 0.000001),
+   VERIFY(fpEqual(radiansFromDegrees(360.0f), 2.0f * Pi<float>, 0.000001f), caseLabel);
+   VERIFY(fpEqual(radiansFromDegrees(57.295779513), 1.0, 0.000001),
           caseLabel);
+}
+
+
+void testSign()
+{
+   const std::string caseLabel = "sign";
+   VERIFY(sign(10) == Sign::Pos, caseLabel);
+   VERIFY(sign(-10L) == Sign::Neg, caseLabel);
+   VERIFY(sign(0) == Sign::None, caseLabel);
+   VERIFY(sign(0.3746) == Sign::Pos, caseLabel);
+   VERIFY(sign(-2.345f) == Sign::Neg, caseLabel);
+   VERIFY(sign(0.0) == Sign::None, caseLabel);
 }
 
 } // namespace
@@ -145,4 +157,5 @@ void testMathUtil()
    testShiftIntoRange();
    testDegreesFromRadians();
    testRadiansFromDegrees();
+   testSign();
 }
