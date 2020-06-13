@@ -8,6 +8,7 @@
 #pragma once
 #include <cassert>
 #include <cmath>
+#include <type_traits>
 
 
 namespace sutil
@@ -38,6 +39,7 @@ template <> struct FpTraits<float>
 
 template <typename FP> bool fpEqual(FP a, FP b, FP eps)
 {
+   static_assert(std::is_floating_point_v<FP>);
    assert(eps >= 0.0);
    return std::abs(a - b) <= eps;
 }
@@ -51,6 +53,7 @@ template <typename FP, typename Traits = FpTraits<FP>> bool fpEqual(FP a, FP b)
 
 template <typename FP> bool fpLess(FP a, FP b, FP eps)
 {
+   static_assert(std::is_floating_point_v<FP>);
    assert(eps >= 0.0);
 	// Check that a is smaller than b by at least the epsilon value
 	// because within that threshold they would still be considered
@@ -67,6 +70,7 @@ template <typename FP, typename Traits = FpTraits<FP>> bool fpLess(FP a, FP b)
 
 template <typename FP> bool fpLessEqual(FP a, FP b, FP eps)
 {
+   static_assert(std::is_floating_point_v<FP>);
    assert(eps >= 0.0);
 	// Check that b is larger than a by at least the epsilon value
 	// because within that threshold they would still be considered
@@ -83,6 +87,7 @@ template <typename FP, typename Traits = FpTraits<FP>> bool fpLessEqual(FP a, FP
 
 template <typename FP> bool fpGreater(FP a, FP b, FP eps)
 {
+   static_assert(std::is_floating_point_v<FP>);
    assert(eps >= 0.0);
 	// Check that a is larger than b by at least the epsilon value
 	// because within that threshold they would still be considered
@@ -99,6 +104,7 @@ template <typename FP, typename Traits = FpTraits<FP>> bool fpGreater(FP a, FP b
 
 template <typename FP> bool fpGreaterEqual(FP a, FP b, FP eps)
 {
+   static_assert(std::is_floating_point_v<FP>);
    assert(eps >= 0.0);
 	// Check that b is smaller than a by at least the epsilon value
 	// because within that threshold they would still be considered
