@@ -112,6 +112,88 @@ void testFpGreaterEqual()
    }
 }
 
+
+///////////////////
+
+void testEqual()
+{
+   {
+      const std::string caseLabel = "equal for integer type";
+      VERIFY(sutil::equal(2, 2), caseLabel);
+      VERIFY(!sutil::equal(2, 3), caseLabel);
+   }
+   {
+      const std::string caseLabel = "equal for floating point type";
+      VERIFY(sutil::equal(2.123, 2.123), caseLabel);
+      VERIFY(!sutil::equal(2.123, 2.124), caseLabel);
+      VERIFY(sutil::equal(2.00000000000000000003, 2.00000000000000000004), caseLabel);
+   }
+}
+
+
+void testLess()
+{
+   {
+      const std::string caseLabel = "less for integer type";
+      VERIFY(sutil::less(2, 3), caseLabel);
+      VERIFY(!sutil::less(2, 2), caseLabel);
+   }
+   {
+      const std::string caseLabel = "less for floating point type";
+      VERIFY(sutil::less(2.123, 2.1234), caseLabel);
+      VERIFY(!sutil::less(2.123, 2.123), caseLabel);
+      VERIFY(!sutil::less(2.00000000000000000003, 2.00000000000000000004), caseLabel);
+   }
+}
+
+
+void testLessEqual()
+{
+   {
+      const std::string caseLabel = "lessEqual for integer type";
+      VERIFY(sutil::lessEqual(2, 3), caseLabel);
+      VERIFY(sutil::lessEqual(2, 2), caseLabel);
+   }
+   {
+      const std::string caseLabel = "lessEqual for floating point type";
+      VERIFY(sutil::lessEqual(2.123, 2.1234), caseLabel);
+      VERIFY(sutil::lessEqual(2.123, 2.123), caseLabel);
+      VERIFY(sutil::lessEqual(2.00000000000000000003, 2.00000000000000000004), caseLabel);
+   }
+}
+
+
+void testGreater()
+{
+   {
+      const std::string caseLabel = "greater for integer type";
+      VERIFY(sutil::greater(3, 2), caseLabel);
+      VERIFY(!sutil::greater(2, 2), caseLabel);
+   }
+   {
+      const std::string caseLabel = "greater for floating point type";
+      VERIFY(sutil::greater(2.1234, 2.123), caseLabel);
+      VERIFY(!sutil::greater(2.123, 2.123), caseLabel);
+      VERIFY(!sutil::greater(2.00000000000000000004, 2.00000000000000000003), caseLabel);
+   }
+}
+
+
+void testGreaterEqual()
+{
+   {
+      const std::string caseLabel = "greaterEqual for integer type";
+      VERIFY(sutil::greaterEqual(3, 2), caseLabel);
+      VERIFY(sutil::greaterEqual(2, 2), caseLabel);
+   }
+   {
+      const std::string caseLabel = "greaterEqual for floating point type";
+      VERIFY(sutil::greaterEqual(2.1234, 2.123), caseLabel);
+      VERIFY(sutil::greaterEqual(2.123, 2.123), caseLabel);
+      VERIFY(sutil::greaterEqual(2.00000000000000000004, 2.00000000000000000003), caseLabel);
+   }
+}
+
 } // namespace
 
 
@@ -124,4 +206,10 @@ void testFpUtil()
    testFpLessEqual();
    testFpGreater();
    testFpGreaterEqual();
+
+   testEqual();
+   testLess();
+   testLessEqual();
+   testGreater();
+   testGreaterEqual();
 }
