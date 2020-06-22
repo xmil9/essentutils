@@ -194,6 +194,31 @@ void testGreaterEqual()
    }
 }
 
+
+void testSqrt()
+{
+   {
+      const std::string caseLabel = "sqrt for float type";
+      VERIFY(sutil::fpEqual(sutil::sqrt(9.0f), 3.0f), caseLabel);
+   }
+   {
+      const std::string caseLabel = "sqrt for double type";
+      VERIFY(sutil::fpEqual(sutil::sqrt(9.0), 3.0), caseLabel);
+   }
+   {
+      const std::string caseLabel = "sqrt for long double type";
+      VERIFY(sutil::fpEqual(sutil::sqrt(9.0L), 3.0L), caseLabel);
+   }
+   {
+      const std::string caseLabel = "sqrt for integer types";
+      VERIFY(sutil::fpEqual(sutil::sqrt<float>(9), 3.0f), caseLabel);
+   }
+   {
+      const std::string caseLabel = "sqrt for integer types";
+      VERIFY(sutil::fpEqual(sutil::sqrt<double>(9L), 3.0), caseLabel);
+   }
+}
+
 } // namespace
 
 
@@ -212,4 +237,6 @@ void testFpUtil()
    testLessEqual();
    testGreater();
    testGreaterEqual();
+
+   testSqrt();
 }
