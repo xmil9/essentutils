@@ -8,6 +8,7 @@
     <ClCompile Include="..\..\filesys_tests_win32.cpp" />
     <ClCompile Include="..\..\fputil_tests.cpp" />
     <ClCompile Include="..\..\math_util_tests.cpp" />
+    <ClCompile Include="..\..\type_traits_util_tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\color_tests.h" />
@@ -16,5 +17,6 @@
     <ClInclude Include="..\..\filesys_tests.h" />
     <ClInclude Include="..\..\fputil_tests.h" />
     <ClInclude Include="..\..\math_util_tests.h" />
+    <ClInclude Include="..\..\type_traits_util_tests.h" />
   </ItemGroup>
 </Project>

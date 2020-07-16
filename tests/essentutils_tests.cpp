@@ -10,6 +10,7 @@
 #include "fputil_tests.h"
 #include "math_util_tests.h"
 #include "string_util_tests.h"
+#include "type_traits_util_tests.h"
 #include <cstdlib>
 #include <iostream>
 
@@ -21,6 +22,7 @@ int main()
    testFpUtil();
    testMathUtil();
    testStringUtil();
+   testTypeTraitsUtil();
 
    std::cout << "essentutils tests finished.\n";
    return EXIT_SUCCESS;
