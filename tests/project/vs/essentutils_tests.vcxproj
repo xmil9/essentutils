@@ -40,6 +40,7 @@
     <ClCompile Include="..\..\filesys_tests_win32.cpp" />
     <ClCompile Include="..\..\fputil_tests.cpp" />
     <ClCompile Include="..\..\math_util_tests.cpp" />
+    <ClCompile Include="..\..\rand_util_tests.cpp" />
     <ClCompile Include="..\..\string_util_tests.cpp" />
     <ClCompile Include="..\..\test_util.cpp" />
     <ClCompile Include="..\..\type_traits_util_tests.cpp" />
@@ -49,6 +50,7 @@
     <ClInclude Include="..\..\filesys_tests.h" />
     <ClInclude Include="..\..\fputil_tests.h" />
     <ClInclude Include="..\..\math_util_tests.h" />
+    <ClInclude Include="..\..\rand_util_tests.h" />
     <ClInclude Include="..\..\string_util_tests.h" />
     <ClInclude Include="..\..\test_util.h" />
     <ClInclude Include="..\..\type_traits_util_tests.h" />

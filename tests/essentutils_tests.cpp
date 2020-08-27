@@ -9,6 +9,7 @@
 #include "filesys_tests.h"
 #include "fputil_tests.h"
 #include "math_util_tests.h"
+#include "rand_util_tests.h"
 #include "string_util_tests.h"
 #include "type_traits_util_tests.h"
 #include <cstdlib>
@@ -21,6 +22,7 @@ int main()
    testFilesys();
    testFpUtil();
    testMathUtil();
+   testRandUtil();
    testStringUtil();
    testTypeTraitsUtil();
 
