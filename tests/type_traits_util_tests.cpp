@@ -10,6 +10,7 @@
 #include "test_util.h"
 #include <iterator>
 #include <list>
+#include <map>
 #include <vector>
 
 
@@ -49,6 +50,35 @@ void testIsIterator()
    static_assert(!sutil::IsIterator_v<CustomType>, "IsIterator allowed CustomType.");
 }
 
+
+void testIsOneOf()
+{
+   struct A
+   {
+   };
+   struct B
+   {
+   };
+
+   static_assert(sutil::isOneOf_v<int, int>);
+   static_assert(sutil::isOneOf_v<int, int, short>);
+   static_assert(sutil::isOneOf_v<int, short, long, int>);
+   static_assert(sutil::isOneOf_v<void, A, B, void>);
+   static_assert(sutil::isOneOf_v<float*, float, float&, float*>);
+   static_assert(sutil::isOneOf_v<const float, unsigned int, const float>);
+   static_assert(sutil::isOneOf_v<A, B, A>);
+   static_assert(
+      sutil::isOneOf_v<std::vector<int>, std::map<int, int>, std::vector<int>>);
+
+   static_assert(!sutil::isOneOf_v<int, bool, short, long>);
+   static_assert(!sutil::isOneOf_v<float, float*, float&, const float>);
+   static_assert(!sutil::isOneOf_v<float, A, B, std::vector<float>>);
+   static_assert(!sutil::isOneOf_v<A, B, B, bool>);
+   static_assert(!sutil::isOneOf_v<std::vector<int>, std::map<int, int>, A, B>);
+   static_assert(!sutil::isOneOf_v<std::vector<int>, std::vector<unsigned int>,
+                                   std::vector<double>>);
+}
+
 } // namespace
 
 
@@ -57,4 +87,5 @@ void testIsIterator()
 void testTypeTraitsUtil()
 {
    testIsIterator();
+   testIsOneOf();
 }

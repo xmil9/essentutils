@@ -26,4 +26,24 @@ template <typename T> struct IsIterator : std::bool_constant<IsIterator_v<T>>
 {
 };
 
+
+///////////////////
+
+template <typename T, typename... Types> struct IsOneOf : std::false_type
+{
+};
+
+template <typename T, typename U> struct IsOneOf<T, U> : std::is_same<T, U>
+{
+};
+
+template <typename T, typename U, typename... Rest>
+struct IsOneOf<T, U, Rest...>
+: std::integral_constant<bool, IsOneOf<T, U>::value || IsOneOf<T, Rest...>::value>
+{
+};
+
+template <typename T, typename... Types>
+inline constexpr bool isOneOf_v = IsOneOf<T, Types...>::value;
+
 } // namespace sutil
