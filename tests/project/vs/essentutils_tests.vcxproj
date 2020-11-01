@@ -35,6 +35,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\angle_tests.cpp" />
     <ClCompile Include="..\..\color_tests.cpp" />
     <ClCompile Include="..\..\essentutils_tests.cpp" />
     <ClCompile Include="..\..\filesys_tests_win32.cpp" />
@@ -46,6 +47,7 @@
     <ClCompile Include="..\..\type_traits_util_tests.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\angle_tests.h" />
     <ClInclude Include="..\..\color_tests.h" />
     <ClInclude Include="..\..\filesys_tests.h" />
     <ClInclude Include="..\..\fputil_tests.h" />

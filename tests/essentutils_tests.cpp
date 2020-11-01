@@ -5,6 +5,7 @@
 // Jun-2019, Michael Lindner
 // MIT license
 //
+#include "angle_tests.h"
 #include "color_tests.h"
 #include "filesys_tests.h"
 #include "fputil_tests.h"
@@ -18,6 +19,7 @@
 
 int main()
 {
+   testAngle();
    testColor();
    testFilesys();
    testFpUtil();
