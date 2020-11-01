@@ -71,6 +71,21 @@ void testMakeDegrees()
 }
 
 
+void testAssignmentFromFp()
+{
+   {
+      const std::string caseLabel = "Angle::operator=(Fp val)";
+
+      using Fp = double;
+      constexpr Fp rad = 1.76;
+      Angle<Fp> a;
+      a = rad;
+
+      VERIFY(a == rad, caseLabel);
+   }
+}
+
+
 void testConversionToFp()
 {
    {
@@ -275,6 +290,7 @@ void testAngle()
    testCtorValue();
    testMakeRadians();
    testMakeDegrees();
+   testAssignmentFromFp();
    testConversionToFp();
    testRadiansAccessor();
    testDegreesAccessor();
