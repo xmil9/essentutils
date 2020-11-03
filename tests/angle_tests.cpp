@@ -45,26 +45,26 @@ void testCtorValue()
 }
 
 
-void testMakeRadians()
+void testFromRadians()
 {
    {
-      const std::string caseLabel = "Angle::makeRadians";
+      const std::string caseLabel = "Angle::fromRadians";
 
       using Fp = float;
-      constexpr Angle a = Angle<Fp>::makeRadians(2.84f);
+      constexpr Angle a = Angle<Fp>::fromRadians(2.84f);
 
       VERIFY(a == 2.84f, caseLabel);
    }
 }
 
 
-void testMakeDegrees()
+void testFromDegrees()
 {
    {
-      const std::string caseLabel = "Angle::makeDegrees";
+      const std::string caseLabel = "Angle::fromDegrees";
 
       using Fp = float;
-      constexpr Angle a = Angle<Fp>::makeDegrees(90.0f);
+      constexpr Angle a = Angle<Fp>::fromDegrees(90.0f);
 
       VERIFY(a == 0.5f * Pi<Fp>, caseLabel);
    }
@@ -123,7 +123,7 @@ void testDegreesAccessor()
 
       using Fp = double;
       constexpr Fp deg = 57.28;
-      constexpr Angle a = Angle<Fp>::makeDegrees(deg);
+      constexpr Angle a = Angle<Fp>::fromDegrees(deg);
 
       VERIFY(sutil::equal(a.degrees(), deg), caseLabel);
    }
@@ -137,9 +137,9 @@ void testRadiansAccessor()
 
       using Fp = double;
       constexpr Fp rad = -1.28;
-      constexpr Angle a = Angle<Fp>::makeRadians(rad);
+      constexpr Angle a = Angle<Fp>::fromRadians(rad);
 
-      VERIFY(a == rad, caseLabel);
+      VERIFY(a.radians() == rad, caseLabel);
    }
 }
 
@@ -914,8 +914,8 @@ void testAngle()
 {
    testDefaultCtor();
    testCtorValue();
-   testMakeRadians();
-   testMakeDegrees();
+   testFromRadians();
+   testFromDegrees();
    testScalarAssignment();
    testConversionToFp();
    testRadiansAccessor();
