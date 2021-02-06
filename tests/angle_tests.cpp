@@ -12,7 +12,7 @@
 #include "test_util.h"
 #include <unordered_map>
 
-using namespace sutil;
+using namespace esl;
 
 
 namespace
@@ -125,7 +125,7 @@ void testDegreesAccessor()
       constexpr Fp deg = 57.28;
       constexpr Angle a = Angle<Fp>::fromDegrees(deg);
 
-      VERIFY(sutil::equal(a.degrees(), deg), caseLabel);
+      VERIFY(esl::equal(a.degrees(), deg), caseLabel);
    }
 }
 

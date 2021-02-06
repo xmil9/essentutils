@@ -20,7 +20,7 @@ void testAppDirectory()
 {
    {
       const std::string caseLabel = "appDirectory";
-      const std::filesystem::path dir = sutil::appDirectory();
+      const std::filesystem::path dir = esl::appDirectory();
       VERIFY(!dir.empty(), caseLabel);
    }
 }
@@ -30,7 +30,7 @@ void testUserDirectory()
 {
    {
       const std::string caseLabel = "userDirectory";
-      const std::filesystem::path dir = sutil::userDirectory();
+      const std::filesystem::path dir = esl::userDirectory();
       VERIFY(!dir.empty(), caseLabel);
    }
 }

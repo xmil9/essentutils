@@ -10,7 +10,7 @@
 #include "fputil.h"
 #include "test_util.h"
 
-using namespace sutil;
+using namespace esl;
 
 
 namespace
