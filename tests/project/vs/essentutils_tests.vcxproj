@@ -45,6 +45,7 @@
     <ClCompile Include="..\..\rand_util_tests.cpp" />
     <ClCompile Include="..\..\string_util_tests.cpp" />
     <ClCompile Include="..\..\test_util.cpp" />
+    <ClCompile Include="..\..\time_util_tests.cpp" />
     <ClCompile Include="..\..\type_traits_util_tests.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -57,6 +58,7 @@
     <ClInclude Include="..\..\rand_util_tests.h" />
     <ClInclude Include="..\..\string_util_tests.h" />
     <ClInclude Include="..\..\test_util.h" />
+    <ClInclude Include="..\..\time_util_tests.h" />
     <ClInclude Include="..\..\type_traits_util_tests.h" />
   </ItemGroup>
   <ItemGroup>

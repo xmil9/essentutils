@@ -12,6 +12,7 @@
     <ClCompile Include="..\..\rand_util_tests.cpp" />
     <ClCompile Include="..\..\angle_tests.cpp" />
     <ClCompile Include="..\..\observed_tests.cpp" />
+    <ClCompile Include="..\..\time_util_tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\color_tests.h" />
@@ -24,5 +25,6 @@
     <ClInclude Include="..\..\rand_util_tests.h" />
     <ClInclude Include="..\..\angle_tests.h" />
     <ClInclude Include="..\..\observed_tests.h" />
+    <ClInclude Include="..\..\time_util_tests.h" />
   </ItemGroup>
 </Project>

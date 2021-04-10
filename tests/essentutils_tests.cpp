@@ -13,6 +13,7 @@
 #include "observed_tests.h"
 #include "rand_util_tests.h"
 #include "string_util_tests.h"
+#include "time_util_tests.h"
 #include "type_traits_util_tests.h"
 #include <cstdlib>
 #include <iostream>
@@ -28,6 +29,7 @@ int main()
    testObserved();
    testRandUtil();
    testStringUtil();
+   testTimeUtil();
    testTypeTraitsUtil();
 
    std::cout << "essentutils tests finished.\n";
